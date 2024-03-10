@@ -225,7 +225,7 @@ def readCSV(train_path, test_path, type2=False):
         df = pd.read_csv(test_path, usecols=(n_input,))
         temp = [elem[0] for elem in df.values]
         correct = np.array(temp)
-        corr_test = kearas.utils.to_categorical(correct,2)      # Converting to one hot
+        corr_test = keras.utils.to_categorical(correct,2)      # Converting to one hot
     if not(type2):
         return train_input, corr_train, test_input, corr_test
     else:
